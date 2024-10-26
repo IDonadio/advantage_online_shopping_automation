@@ -2,28 +2,17 @@
 
 Funcionalidade: API de detalhes do produto
 
-Contexto: 
-  Dado que tenho a API para obter detalhes de um produto
-  E eu faço uma requisição GET ao servidor para "/api/products/" passando um ID válido
-
-Cenário: API retorna status de sucesso 
+Esquema do Cenário:
+  Quando eu faço uma requisição para "<url>" passando um id <id>
   Então o código de retorno da API deve ser 200
-
-Cenário: Retorno tem cabeçalho http correto
-  Então o cabeçalho do corpo de resposta deve ser "application/json"
-
-Esquema do Cenário: Retorno contém ID do produto correto
-  Então o corpo de resposta contém <productID>
+  E o cabeçalho do corpo de resposta deve ser "application/json"
+  E o corpo de resposta deve conter <id>, "<productName>", <price>, "<status>" e "<description>"
 
 Exemplos:
-  | productID |
-  |           |
+  | url                                                                 |  id       |  productName                     | price    | status   | description                                                                                                                                      |
+  | https://www.advantageonlineshopping.com/catalog/api/v1/products/    |  29       |  HP USB 3 Button Optical Mouse   |   9.99   |  Active  |  Smooth and Accurate - The HP USB 3-Button Optical Mouse is the affordable desktop optical mouse solution that combines functionality with style |
 
-Esquema do Cenário: Retorno contém dados do produto
-  Então o corpo de resposta contém <productName>, <price> e <status>
 
-Exemplos:
-  | productName | price | status |
-  |             |       |        |
+
 
 

@@ -1,9 +1,9 @@
 #language: pt
 
-Funcionalidade: API de detalhes do produto
+Funcionalidade: API para obter detalhes do produto
 
-Esquema do Cenário:
-  Quando eu faço uma requisição para "<url>" passando um id <id>
+Esquema do Cenário: obtém e valida detalhes de um produto
+  Quando eu faço uma requisição GET para "<url>" passando um id <id>
   Então o código de retorno da API deve ser 200
   E o cabeçalho do corpo de resposta deve ser "application/json"
   E o corpo de resposta deve conter <id>, "<productName>", <price>, "<status>" e "<description>"
